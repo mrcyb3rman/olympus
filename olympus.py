@@ -9,7 +9,7 @@ def figlet():
              "Digital.flf", "Doh.flf", "Doom.flf", "Epic.flf", "Isometric1.flf", "Isometric3.flf", "Lean.flf", "Poison.flf", "sblood.flf", "Slant.flf"]
     print()
     subprocess.call(
-        ["figlet", "-f", "/root/Desktop/olympus/figlet-fonts/bests_fonts/{}".format(random.choice(fonts)), "Olympus"])
+        ["figlet", "-f", "./figlet-fonts/bests_fonts/{}".format(random.choice(fonts)), "Olympus"])
     print()
 
 
