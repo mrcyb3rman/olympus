@@ -48,7 +48,7 @@ def module():
 
 def info():
     while True:
-        data = input("(info)>>> ")
+        data = input("olympus(info) > ")
         if data == "help" or data == "?":
             print("""
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -151,7 +151,7 @@ def info():
 
 def scan():
     while True:
-        data = input("(scan)>>> ")
+        data = input("olympus(scan) > ")
         if data == "help" or data == "?":
             print("""
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,7 +209,7 @@ def scan():
 
 def wireless():
     while True:
-        data = input("(wireless)>>> ")
+        data = input("olympus(wireless) > ")
         if data == "help" or data == "?":
             print("""
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -250,7 +250,7 @@ def wireless():
                 continue
         elif data == "aireplay-ng":
             while True:
-                data = input("(wireless/aireplay-ng)>>> ")
+                data = input("olympus(wireless/aireplay-ng) > ")
                 if data == "help":
                     print("""
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -329,7 +329,7 @@ def wireless():
 
 def passwd():
     while True:
-        data = input("(passwd)>>> ")
+        data = input("olympus(passwd) > ")
         if data == "help" or data == "?":
             print("""
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
