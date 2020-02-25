@@ -67,3 +67,8 @@ echo "		[+] Installing medusa..."
 apt-get install medusa figlet >> install.log
 echo
 
+echo "[!] Creating /usr/bin/olympus"
+ln -s olympus.py /usr/bin/olympus
+echo
+echo "[!] All Done"
+echo
