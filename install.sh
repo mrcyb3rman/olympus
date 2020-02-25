@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo chmod +x olympus.py
+
 echo
 echo "[!] Updating Database..."
 sudo apt-get update >> install.log
@@ -68,7 +70,8 @@ apt-get install medusa figlet >> install.log
 echo
 
 echo "[!] Creating /usr/bin/olympus"
-ln -s olympus.py /usr/bin/olympus
+sudo ln -s olympus.py /usr/bin/olympus
 echo
+
 echo "[!] All Done"
 echo
