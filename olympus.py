@@ -15,7 +15,7 @@ def figlet():
 
 def help():
     print("""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 | help     - display all cammands  |
 | clear    - clear the terminal    |
 | info     - information gathering |
@@ -23,7 +23,7 @@ def help():
 | wireless - wireless attacks      |
 | passwd   - password attacks      |
 | exit     - exit program          |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 		""")
 
 
@@ -51,7 +51,7 @@ def info():
         data = input("olympus(info) > ")
         if data == "help" or data == "?":
             print("""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 | help         - display all cammands                               |
 | clear        - clear the terminal                                 |
 | back         - back to main                                       |
@@ -64,7 +64,7 @@ def info():
 | dnsrecon     - DNS Enumeration Script                             |
 | wafw00f      - Identify Web Application Firewall products         |
 | netdiscover  - active/passive ARP reconnaissance tool             |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 				""")
         elif data == "clear":
             clear()
@@ -74,7 +74,7 @@ def info():
             quit()
         elif data == "theHarvester":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["theHarvester", "-d", target, "-l", "500",
                                  "-n", "-c", "-f", "{}.html".format(target), "-b", "google"])
             except KeyboardInterrupt:
@@ -82,25 +82,25 @@ def info():
                 continue
         elif data == "dmitry":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["dmitry", "-winseo", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "knockpy":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 wordlists()
-                wordlist = input("wordlist>>> ")
+                wordlist = input("wordlist > ")
                 subprocess.call(["knockpy", "-w", wordlist, target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "gobuster":
             try:
-                target = input("target (full URL)>>> ")
+                target = input("target (full URL) > ")
                 wordlists()
-                wordlist = input("wordlist>>> ")
+                wordlist = input("wordlist > ")
                 subprocess.call(
                     ["gobuster", "dir", "-w", wordlist, "-u", target])
             except KeyboardInterrupt:
@@ -108,45 +108,41 @@ def info():
                 continue
         elif data == "dnsenum":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["dnsenum", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "dnsrecon":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["dnsrecon", "-d", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "fierce":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["fierce", "-dns", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "wafw00f":
             try:
-                target = input("target (full URL)>>> ")
+                target = input("target (full URL) > ")
                 subprocess.call(["wafw00f", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "netdiscover":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["netdiscover", "-r", target])
             except KeyboardInterrupt:
                 print()
                 continue
         else:
-            print("""
-~~~~~~~~~~~~~
-| try help  |
-~~~~~~~~~~~~~
-        		""")
+            print("[!] Try 'help' command")
 
 
 def scan():
@@ -154,7 +150,7 @@ def scan():
         data = input("olympus(scan) > ")
         if data == "help" or data == "?":
             print("""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 | help     - display all cammands                       |
 | clear    - clear the terminal                         |
 | back     - back to main                               |
@@ -162,7 +158,7 @@ def scan():
 | skipfish - web application security scanner           |
 | wpscan   - WordPress Security Scanner                 |
 | nikto    - Scan web server for known vulnerabilities  |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 				""")
         elif data == "clear":
             clear()
@@ -172,39 +168,35 @@ def scan():
             quit()
         elif data == "nmap":
             try:
-                target = input("target>>> ")
+                target = input("target > ")
                 subprocess.call(["nmap", "-A", "-T4", "-Pn", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "skipfish":
             try:
-                target = input("target (full URL)>>> ")
-                output = input("ouput_dir>>> ")
+                target = input("target (full URL) > ")
+                output = input("ouput_dir > ")
                 subprocess.call(["skipfish", "-o", output, target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "wpscan":
             try:
-                target = input("target (full URL)>>> ")
+                target = input("target (full URL) > ")
                 subprocess.call(["wpscan", "--url", target])
             except KeyboardInterrupt:
                 print()
                 continue
         elif data == "nikto":
             try:
-                target = input("target (full URL)>>> ")
+                target = input("target (full URL) > ")
                 subprocess.call(["nikto", "-h", target])
             except KeyboardInterrupt:
                 print()
                 continue
         else:
-            print("""
-~~~~~~~~~~~~~
-| try help  |
-~~~~~~~~~~~~~
-        		""")
+            print("[!] Try 'help' command")
 
 
 def wireless():
@@ -212,7 +204,7 @@ def wireless():
         data = input("olympus(wireless) > ")
         if data == "help" or data == "?":
             print("""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 | help        - display all cammands                   |
 | clear       - clear the terminal                     |
 | back        - back to main                           |
@@ -221,7 +213,7 @@ def wireless():
 | aireplay-ng - inject packets into a wireless network |
 | reaver      - WPS Cracker                            |
 | bully       - WPS brute force attacker               |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 				""")
         elif data == "clear":
             clear()
@@ -229,7 +221,7 @@ def wireless():
             break
         elif data == "aircrack-ng":
             try:
-                cap = input("cap_file>>> ")
+                cap = input("cap_file > ")
                 subprocess.call(
                     ["aircrack-ng", "-w", "/usr/share/wordlists/rockyou.txt", cap])
             except KeyboardInterrupt:
@@ -237,12 +229,12 @@ def wireless():
                 continue
         elif data == "airodump-ng":
             try:
-                interface = input("interface>>> ")
+                interface = input("interface > ")
                 while True:
                     subprocess.call(["airodump-ng", interface])
-                    bssid = input("target_mac>>> ")
-                    channel = input("channel>>> ")
-                    file = input("file_name>>> ")
+                    bssid = input("target_mac > ")
+                    channel = input("channel > ")
+                    file = input("file_name > ")
                     subprocess.call(["airodump-ng", "--bssid", bssid,
                                      "--channel", channel, "--write", file, interface])
             except KeyboardInterrupt:
@@ -251,16 +243,16 @@ def wireless():
         elif data == "aireplay-ng":
             while True:
                 data = input("olympus(wireless/aireplay-ng) > ")
-                if data == "help":
+                if data == "help" or data == "?":
                     print("""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 | help      - display all cammands             |
 | clear     - clear the terminal               |
 | back      - back to main                     |
 | deauth    - deauthenticate 1 or all stations |
 | fakeauth  - fake authentication with AP      |
 | arpreplay - standard ARP-request replay      |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 						""")
                 elif data == "clear":
                     clear()
@@ -268,9 +260,9 @@ def wireless():
                     break
                 elif data == "deauth":
                     try:
-                        bssid = input("target_mac>>> ")
-                        target = input("target_mac>>> ")
-                        interface = input("interface>>> ")
+                        bssid = input("target_mac > ")
+                        target = input("target_mac > ")
+                        interface = input("interface > ")
                         subprocess.call(
                             ["aireplay-ng", "--deauth", "0", "-a", bssid, "-c", target, interface])
                     except KeyboardInterrupt:
@@ -278,9 +270,9 @@ def wireless():
                         continue
                 elif data == "fakeauth":
                     try:
-                        bssid = input("target_mac>>> ")
-                        target = input("your_mac>>> ")
-                        interface = input("interface>>> ")
+                        bssid = input("target_mac > ")
+                        target = input("your_mac > ")
+                        interface = input("interface > ")
                         subprocess.call(
                             ["aireplay-ng", "--fakeauth", "30", "-a", bssid, "-h", mac, interface])
                     except KeyboardInterrupt:
@@ -288,9 +280,9 @@ def wireless():
                         continue
                 elif data == "arpreplay":
                     try:
-                        bssid = input("target_mac>>> ")
-                        target = input("your_mac>>> ")
-                        interface = input("interface>>> ")
+                        bssid = input("target_mac > ")
+                        target = input("your_mac > ")
+                        interface = input("interface > ")
                         subprocess.call(
                             ["aireplay-ng", "--arpreplay", "-b", bssid, "-h", mac, interface])
                     except KeyboardInterrupt:
@@ -298,9 +290,9 @@ def wireless():
                         continue
         elif data == "reaver":
             try:
-                bssid = input("target_mac>>> ")
-                channel = input("channel>>> ")
-                interface = input("interface>>> ")
+                bssid = input("target_mac > ")
+                channel = input("channel > ")
+                interface = input("interface > ")
                 subprocess.call(
                     ["reaver", "--bssid", bssid, "--channel", channel, "--interface", interface])
             except KeyboardInterrupt:
@@ -308,10 +300,10 @@ def wireless():
                 continue
         elif data == "bully":
             try:
-                bssid = input("target_mac>>> ")
-                essid = input("target_essid>>> ")
-                channel = input("channel>>> ")
-                interface = input("interface>>> ")
+                bssid = input("target_mac > ")
+                essid = input("target_essid > ")
+                channel = input("channel > ")
+                interface = input("interface > ")
                 subprocess.call(["bully", "-b", bssid, "-e",
                                  essid, "-c", channel, interface])
             except KeyboardInterrupt:
@@ -320,11 +312,7 @@ def wireless():
         elif data == "exit":
             quit()
         else:
-            print("""
-~~~~~~~~~~~~~
-| try help  |
-~~~~~~~~~~~~~
-        		""")
+            print("[!] Try 'help' command")
 
 
 def passwd():
@@ -332,7 +320,7 @@ def passwd():
         data = input("olympus(passwd) > ")
         if data == "help" or data == "?":
             print("""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 | help             - display all cammands                         |
 | clear            - clear the terminal                           |
 | back             - back to main                                 |
@@ -341,7 +329,7 @@ def passwd():
 | hash-identifier  - WordPress Security Scanner                   |
 | john             - a tool to find weak passwords of your users  |
 | medusa           - Parallel Network Login Auditor               |
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 					""")
         elif data == "clear":
             clear()
@@ -351,9 +339,9 @@ def passwd():
             quit()
         elif data == "crunch":
             try:
-                minimum = input("min>>> ")
-                maximum = input("max>>> ")
-                strings = input("characters>>> ")
+                minimum = input("min > ")
+                maximum = input("max > ")
+                strings = input("characters > ")
                 subprocess.call(["crunch", minimum, maximum,
                                  strings, "-o", "wordlist.txt"])
             except KeyboardInterrupt:
@@ -361,7 +349,7 @@ def passwd():
                 continue
         elif data == "hashcat":
             try:
-                file = input("md5_hashs>>> ")
+                file = input("md5_hashs > ")
                 subprocess.call(
                     ["hashcat", "-m", "0", "-a", "0", file, "/usr/share/wordlists/rockyou.txt"])
 
@@ -376,8 +364,8 @@ def passwd():
                     break
         elif data == "john":
             try:
-                passwd_file = input("passwd>>> ")
-                shadow_file = input("shadow>>> ")
+                passwd_file = input("passwd > ")
+                shadow_file = input("shadow > ")
                 subprocess.call("unshadow {} {} > password.txt".format(
                     passwd_file, shadow_file), shell=True)
                 subprocess.call(["john", "password.txt"])
@@ -387,11 +375,11 @@ def passwd():
                 continue
         elif data == "medusa":
             try:
-                host = input("host>>> ")
-                username = input("username_file>>> ")
-                password = input("password_file>>>")
+                host = input("host > ")
+                username = input("username_file > ")
+                password = input("password_file >")
                 module()
-                module_name = input("module>>> ")
+                module_name = input("module > ")
                 subprocess.call(["medusa", "-h", host, "-U",
                                  username, "-P", password, "-M", module_name])
             except KeyboardInterrupt:
@@ -403,7 +391,7 @@ figlet()
 
 while True:
     try:
-        data = input(">>> ")
+        data = input("olympus > ")
         if data == "help" or data == "?":
             help()
         elif data == "clear":
@@ -418,6 +406,8 @@ while True:
             passwd()
         elif data == "exit" or data == "quit":
             quit()
+        else:
+            print("[!] Try 'help' command")
     except KeyboardInterrupt:
         print("\n\nPeace Out!\n")
         break
