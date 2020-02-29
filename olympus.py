@@ -6,7 +6,7 @@ import random
 
 def figlet():
     fonts = ["3-D.flf", "5lineoblique.flf", "Acrobatic.flf", "Alligator2.flf", "Alligator.flf", "Block.flf", "Catwalk.flf", "Cosmike.flf", "Cyberlarge.flf",
-             "Digital.flf", "Doh.flf", "Doom.flf", "Epic.flf", "Isometric1.flf", "Isometric3.flf", "Lean.flf", "Poison.flf", "sblood.flf", "Slant.flf"]
+             "Digital.flf", "Doom.flf", "Epic.flf", "Lean.flf", "Poison.flf", "sblood.flf", "Slant.flf"]
     print()
     subprocess.call(
         ["figlet", "-f", "./figlet-fonts/bests_fonts/{}".format(random.choice(fonts)), "Olympus"])
