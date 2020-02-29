@@ -35,5 +35,5 @@ Install
 
 <code>$ python3 olympus.py </code>
 
-<code>$>>> help or ? </code>
+<code>$olympus > help or ? </code>
 
